@@ -1,0 +1,148 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion '26.0.2'
+
+    defaultConfig {
+        minSdkVersion 18
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        targetCompatibility 1.8
+        sourceCompatibility 1.8
+    }
+}
+
+buildscript {
+    repositories {
+        jcenter()
+        maven { url 'https://maven.fabric.io/public' }
+    }
+    dependencies {
+        classpath "io.realm:realm-gradle-plugin:4.1.0"
+    }
+}
+
+apply plugin: 'realm-android'
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:25.4.0'
+
+    compile 'com.squareup.retrofit2:converter-gson:2.2.0'
+    compile 'com.squareup.retrofit2:retrofit:2.2.0'
+    compile 'com.android.support:design:25.4.0'
+    compile 'com.orhanobut:logger:2.1.1'
+
+    compile 'com.android.support:recyclerview-v7:25.4.0'
+
+    testCompile 'junit:junit:4.12'
+}
+
+group = 'com.github.developersmoviletp.utils' // Change this to match your package name
+
+apply plugin: 'com.github.dcendents.android-maven'
+install {
+    repositories.mavenInstaller {
+        pom {
+            project {
+                packaging 'aar'
+                artifactId 'utils'
+
+                name 'utils'
+                description 'utils'
+
+                licenses {
+                    license {
+                        name 'MIT'
+                        url 'https://opensource.org/licenses/MIT'
+                    }
+                }
+
+                developers {
+                    developer {
+                        id 'developermovile'
+                        name 'Developers Movile Total'
+                        email 'developersmoviletp@gmail.com'
+                    }
+                }
+                scm {
+                    connection 'https://github.com/developersmoviletp/utils.git'
+                    developerConnection 'https://github.com/developersmoviletp/utils.git'
+
+                }
+            }
+        }
+    }
+}
+apply plugin: 'com.jfrog.bintray'
+
+if (project.hasProperty("android")) {
+    // deploy aar
+    task sourcesJar(type: Jar) {
+        classifier = 'sources'
+        from android.sourceSets.main.java.srcDirs
+    }
+
+    task javadoc(type: Javadoc) {
+        source = android.sourceSets.main.java.srcDirs
+        classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+    }
+} else {
+    // deploy jars only
+    task sourcesJar(type: Jar, dependsOn: classes) {
+        classifier = 'sources'
+        from sourceSets.main.allSource
+    }
+}
+
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    classifier = 'javadoc'
+    from javadoc.destinationDir
+}
+
+artifacts {
+    archives javadocJar
+    archives sourcesJar
+}
+version = '1.0.0'
+bintray {
+    user = 'developersmoviletp'
+    key = '54ef1e322dda9a5fac6d746c75fc08bf86b16bf0'
+    pkg {
+        repo = 'maven'
+        name = 'utils'
+
+        version {
+            name = '1.0.0'
+            desc = 'test'
+            released = new Date()
+            vcsTag = '1.0.0'
+        }
+
+        licenses = ['MIT']
+        publish = true
+        publicDownloadNumbers = true
+        vcsUrl = 'https://github.com/developersmoviletp/utils.git'
+        websiteUrl = 'https://github.com/developersmoviletp/utils'
+    }
+    configurations = ['archives']
+
+    
+}
