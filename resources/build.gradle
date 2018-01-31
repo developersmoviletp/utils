@@ -8,7 +8,7 @@ android {
         minSdkVersion 18
         targetSdkVersion 25
         versionCode 1
-        versionName "1.0"
+        versionName "1.0.1"
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
@@ -121,7 +121,7 @@ artifacts {
     archives javadocJar
     archives sourcesJar
 }
-version = '1.0.0'
+version = '1.0.1'
 bintray {
     user = 'developersmoviletp'
     key = '54ef1e322dda9a5fac6d746c75fc08bf86b16bf0'
@@ -130,10 +130,10 @@ bintray {
         name = 'utils'
 
         version {
-            name = '1.0.0'
+            name = '1.0.1'
             desc = 'test'
             released = new Date()
-            vcsTag = '1.0.0'
+            vcsTag = '1.0.1'
         }
 
         licenses = ['MIT']
@@ -144,5 +144,4 @@ bintray {
     }
     configurations = ['archives']
 
-    
 }
