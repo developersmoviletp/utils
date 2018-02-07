@@ -1,4 +1,4 @@
-package com.resources.view.BaseSimpleRecyclerView;
+package com.resources.view.recicler;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;

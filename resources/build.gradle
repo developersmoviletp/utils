@@ -8,7 +8,7 @@ android {
         minSdkVersion 18
         targetSdkVersion 25
         versionCode 1
-        versionName "1.0.1"
+        versionName "1.0.2"
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
@@ -49,7 +49,8 @@ dependencies {
     compile 'com.squareup.retrofit2:retrofit:2.2.0'
     compile 'com.android.support:design:25.4.0'
     compile 'com.orhanobut:logger:2.1.1'
-
+    compile 'com.jakewharton.rxbinding2:rxbinding:2.1.0'
+    compile 'io.reactivex:rxjava:1.3.0'
     compile 'com.android.support:recyclerview-v7:25.4.0'
 
     testCompile 'junit:junit:4.12'
@@ -63,10 +64,10 @@ install {
         pom {
             project {
                 packaging 'aar'
-                artifactId 'utils'
+                artifactId 'resources'
 
-                name 'utils'
-                description 'utils'
+                name 'resources'
+                description 'resources'
 
                 licenses {
                     license {
@@ -121,19 +122,19 @@ artifacts {
     archives javadocJar
     archives sourcesJar
 }
-version = '1.0.1'
+version = '1.0.2'
 bintray {
     user = 'developersmoviletp'
     key = '54ef1e322dda9a5fac6d746c75fc08bf86b16bf0'
     pkg {
         repo = 'maven'
-        name = 'utils'
+        name = 'resources'
 
         version {
-            name = '1.0.1'
+            name = '1.0.2'
             desc = 'test'
             released = new Date()
-            vcsTag = '1.0.1'
+            vcsTag = '1.0.2'
         }
 
         licenses = ['MIT']

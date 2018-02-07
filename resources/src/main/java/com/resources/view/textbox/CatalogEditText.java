@@ -1,4 +1,4 @@
-package com.resources.view.CatalogEditText;
+package com.resources.view.textbox;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
