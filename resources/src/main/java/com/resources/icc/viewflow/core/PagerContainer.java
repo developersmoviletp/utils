@@ -12,12 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
-/**
- * PagerContainer: A layout that displays a ViewPager with its children that are outside
- * the typical pager bounds.
- *
- * @see(<a href = "https://gist.github.com/devunwired/8cbe094bb7a783e37ad1"></>)
- */
+
 public class PagerContainer extends FrameLayout implements ViewPager.OnPageChangeListener {
 
     private ViewPager mPager;
