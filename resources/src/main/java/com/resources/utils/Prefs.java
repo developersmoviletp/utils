@@ -13,6 +13,7 @@ public class Prefs {
     private final SharedPreferences preferences;
     private Context context;
 
+
     private Prefs(Context context) {
         preferences = context
                 .getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
