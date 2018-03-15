@@ -18,6 +18,11 @@ public class Prefs {
                 .getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
     }
 
+    private Prefs(Context context,String library) {
+        preferences = context
+                .getSharedPreferences(library, Context.MODE_PRIVATE);
+    }
+
     public static void setDefaultContext(Context context) {
         with(context);
     }

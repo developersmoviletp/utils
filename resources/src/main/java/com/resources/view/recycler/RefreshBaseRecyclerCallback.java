@@ -1,4 +1,4 @@
-package com.resources.view.recicler;
+package com.resources.view.recycler;
 
 /**
  * Created by jorgehdezvilla on 11/03/17.

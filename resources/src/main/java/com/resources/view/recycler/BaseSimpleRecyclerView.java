@@ -1,4 +1,4 @@
-package com.resources.view.recicler;
+package com.resources.view.recycler;
 
 import android.graphics.Rect;
 import android.support.v4.widget.SwipeRefreshLayout;
