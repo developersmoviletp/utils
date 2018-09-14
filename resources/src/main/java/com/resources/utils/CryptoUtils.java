@@ -22,6 +22,29 @@ import javax.crypto.spec.SecretKeySpec;
 
 public class CryptoUtils {
 
+      @SuppressLint("GetInstance")
+    public static String cryptMultipart(String secretKey, String text) {
+        String base64EncryptedString = "";
+        try {
+            MessageDigest md = MessageDigest.getInstance("MD5");
+            byte[] digestOfPassword = md.digest(secretKey.getBytes("utf-8"));
+            byte[] keyBytes = Arrays.copyOf(digestOfPassword, 24);
+
+
+            SecretKey key = new SecretKeySpec(keyBytes, "DESede");
+            Cipher cipher = Cipher.getInstance("DESede");
+            cipher.init(Cipher.ENCRYPT_MODE, key);
+
+            byte[] plainTextBytes = text.getBytes("utf-8");
+            byte[] buf = cipher.doFinal(plainTextBytes);
+            byte[] base64Bytes = Base64.encode(buf, Base64.DEFAULT);
+            base64EncryptedString = new String(base64Bytes);
+
+        } catch (Exception ignored) {
+        }
+        return base64EncryptedString;
+    }
+    
     @SuppressLint("GetInstance")
     public static String crypt(String text) {
         String secretKey = "oaguser";
