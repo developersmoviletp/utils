@@ -4,8 +4,6 @@
     <modules>
       <module fileurl="file://C:/Users/reype/OneDrive/Documentos/utilsResources/.idea/LibraryUtils.iml" filepath="C:/Users/reype/OneDrive/Documentos/utilsResources/.idea/LibraryUtils.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/resources/resources.iml" filepath="$PROJECT_DIR$/resources/resources.iml" />
       <module fileurl="file://$PROJECT_DIR$/resources/resources.iml" filepath="$PROJECT_DIR$/resources/resources.iml" />
       <module fileurl="file://C:/Users/reype/OneDrive/Documentos/utilsResources/utils.iml" filepath="C:/Users/reype/OneDrive/Documentos/utilsResources/utils.iml" />
       <module fileurl="file://$PROJECT_DIR$/utils2.iml" filepath="$PROJECT_DIR$/utils2.iml" />
