@@ -13,12 +13,6 @@ import com.resources.icc.viewflow.core.LinkagePager;
  */
 public class CoverFlow {
 
-  //  public static final float DEFAULT_SCALE_VALUE  = 0.3f;
-
-  //  public static final float DEFAULT_PAGER_MARGIN = 0f;
-
- //   public static final float DEFAULT_SPACE_SIZE   = 0f;
-
     private final ViewPager viewPager;
     private final LinkagePager linkagePager;
     private final float scaleValue;

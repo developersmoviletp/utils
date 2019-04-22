@@ -153,17 +153,5 @@ public abstract class BaseDataManager {
     }
 
 
-//    @SuppressWarnings("WeakerAccess")
-//    public static class Transactions {
-//
-//        public BaseDataManager dataManager;
-//        public Realm realm;
-//
-//        Transactions(Realm realm, BaseDataManager dataManager) {
-//            this.realm = realm;
-//            this.dataManager = dataManager;
-//        }
-//
-//
-//    }
+
 }

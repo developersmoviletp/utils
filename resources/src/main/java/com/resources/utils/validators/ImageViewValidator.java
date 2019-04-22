@@ -33,6 +33,5 @@ public class ImageViewValidator extends FormValidator.Validator {
 
     @Override
     void stopError() {
-//        error(null);
     }
 }

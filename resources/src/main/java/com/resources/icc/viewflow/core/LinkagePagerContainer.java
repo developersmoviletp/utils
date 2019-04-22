@@ -37,12 +37,7 @@ public class LinkagePagerContainer extends FrameLayout implements LinkagePager.O
     }
 
     private void init() {
-        //Disable clipping of children so non-selected pages are visible
         setClipChildren(false);
-
-        //Child clipping doesn't work with hardware acceleration in Android 3.x/4.x
-        //You need to set this value here if using hardware acceleration in an
-        // application targeted at these releases.
         setLayerType(View.LAYER_TYPE_SOFTWARE, null);
     }
 
